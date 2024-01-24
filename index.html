@@ -195,22 +195,31 @@
 			// discount 
 
 
-			// terenary
+			// ternary
+
+			// if condition is true the discount will be returned (0.1) of false the 0 will return
 			const disAmount = (sub_total >= 250) ? sub_total * 0.1 : 0;
 
+			// displaying the final discount Amount
 			document.querySelector("#discount").innerHTML = "$" + disAmount.toFixed(2);
 
-			total = sub_total - disAmount;
+			
 
 			// tax 
 
-			
+			const taxIs = 0.12;
+
+			const taxAmount = sub_total * taxIs;
+
+			document.querySelector("#tax").innerHTML = "$" + taxAmount.toFixed(2);
 			
 
 
 			// total
 
-			document.querySelector("#Total").innerHTML = sub_total - disAmount.toFixed(2);
+			total = sub_total - disAmount - taxAmount;
+
+			document.querySelector("#Total").innerHTML = "$" + total.toFixed(2);
 		}
 
 
