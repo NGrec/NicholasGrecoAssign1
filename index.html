@@ -214,7 +214,7 @@
 			const taxIs = 0.12;
 
 			// our tax amount will be our sub total multiplied by the tax rate
-			const taxAmount = sub_total * taxIs;
+			const taxAmount = (sub_total - disAmount) * taxIs;
 
 			// displaying the final tax amount
 			document.querySelector("#tax").innerHTML = "$" + taxAmount.toFixed(2);
