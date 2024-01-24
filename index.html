@@ -135,7 +135,7 @@
 
 			line_total = line_2_quant * line_2_price;
 
-			document.querySelector("#line-2").innerHTML = "$" + line_total;
+			document.querySelector("#line-2").innerHTML = "$" + line_total.toFixed(2);
 
 			sub_total += line_total;
 
@@ -149,7 +149,7 @@
 
 			line_total = line_3_quant * line_3_price;
 
-			document.querySelector("#line-3").innerHTML = "$" + line_total;
+			document.querySelector("#line-3").innerHTML = "$" + line_total.toFixed(2);
 
 			sub_total += line_total;
 
@@ -163,7 +163,7 @@
 
 			line_total = line_4_quant * line_4_price;
 
-			document.querySelector("#line-4").innerHTML = "$" + line_total;
+			document.querySelector("#line-4").innerHTML = "$" + line_total.toFixed(2);
 
 			sub_total += line_total;
 
@@ -177,7 +177,7 @@
 
 			line_total = line_5_quant * line_5_price;
 
-			document.querySelector("#line-5").innerHTML = "$" + line_total;
+			document.querySelector("#line-5").innerHTML = "$" + line_total.toFixed(2);
 
 			sub_total += line_total;
 
@@ -189,7 +189,7 @@
 			line_total = sub_total;
 
 			// displays the sub total on the page with the line totals added
-			document.querySelector("#sub-total").innerHTML = "$" + line_total;
+			document.querySelector("#sub-total").innerHTML = "$" + line_total.toFixed(2);
 
 
 			// discount 
@@ -207,18 +207,23 @@
 
 			// tax 
 
+			// I am stating that the tax rate is 0.12
 			const taxIs = 0.12;
 
+			// our tax amount will be our sub total multiplied by the tax rate
 			const taxAmount = sub_total * taxIs;
 
+			// displaying the final tax amount
 			document.querySelector("#tax").innerHTML = "$" + taxAmount.toFixed(2);
 			
 
 
 			// total
 
+			// our total will be the sub total minus our discount amount and the tax amount
 			total = sub_total - disAmount - taxAmount;
 
+			// displaying the final total!
 			document.querySelector("#Total").innerHTML = "$" + total.toFixed(2);
 		}
 
