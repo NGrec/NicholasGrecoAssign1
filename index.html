@@ -102,8 +102,10 @@
 
 			// declaring variables that will change thorughout the code
 
-			let line_total = 0
-			let sub_total = 0
+			let line_total = 0;
+			let sub_total = 0;
+			let discount = 0;
+			let tax = 0;
 
 		
 			// line 1
@@ -192,15 +194,13 @@
 
 			// discount 
 
-			if (sub_total >= 250) {
-				
-				discount = sub_total * 0.1;
 
-				sub_total = sub_total - discount;
+			// terenary
+			const disAmount = (sub_total >= 250) ? sub_total * 0.1 : 0;
 
-				document.querySelector("#discount").innerHTML = sub_total;
+			document.querySelector("#discount").innerHTML = disAmount.toFixed(2)
 
-			}
+			total = sub_total - disAmount;
 		
 		}
 
