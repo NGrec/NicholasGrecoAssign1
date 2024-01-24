@@ -223,7 +223,7 @@
 			// total
 
 			// our total will be the sub total minus our discount amount and the tax amount
-			total = sub_total - disAmount - taxAmount;
+			total = sub_total - disAmount + taxAmount;
 
 			// displaying the final total!
 			document.querySelector("#Total").innerHTML = "$" + total.toFixed(2);
